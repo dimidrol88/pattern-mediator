@@ -14,8 +14,12 @@ class BaseComponent
      */
     protected $mediator;
 
+    /** @var string */
     private $uid;
 
+    /**
+     * @param MediatorInterface|null $mediator
+     */
     public function __construct(MediatorInterface $mediator = null)
     {
         $this->mediator = $mediator;
@@ -30,6 +34,9 @@ class BaseComponent
         return $this->uid;
     }
 
+    /**
+     * @param MediatorInterface $mediator
+     */
     public function setMediator(MediatorInterface $mediator)
     {
         $this->mediator = $mediator;

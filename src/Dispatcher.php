@@ -9,12 +9,19 @@ class Dispatcher implements MediatorInterface
     /** @var BaseComponent[]  */
     private $components = [];
 
+    /**
+     * @param BaseComponent $component
+     */
     public function addComponent(BaseComponent $component)
     {
         $component->setMediator($this);
         $this->components[] = $component;
     }
 
+    /**
+     * @param BaseComponent $sender
+     * @param string $event
+     */
     public function notify(BaseComponent $sender, string $event)
     {
         if ($event == BaseComponent::EVENT_LAND_TO_1) {
